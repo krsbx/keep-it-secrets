@@ -17,6 +17,9 @@
     crossorigin="anonymous"></script>
 
   <script src="https://kit.fontawesome.com/6b522f63d7.js" crossorigin="anonymous"></script>
+
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,10 +32,10 @@
     <h1 class="text-center m-4">Keep It Secret!</h1>
 
     <div class="row">
-      <div class="col-lg-6 col-md-12 w-lg-50">
-        <div class="container-fluid border rounded p-3 w-75 mx-auto my-3">
+      <div class="col-lg-6 col-md-12 w-lg-50 mb-5">
+        <div class="container-fluid border rounded p-3 w-75 mx-auto my-3 h-100" id="encryptDiv">
           <h2>
-            Encryptor
+            Encryptor <i class="fa-solid fa-key"></i>
           </h2>
           <form action="">
             <input type="file" class="form-control" name="" id="" accept="image/png, image/jpeg">
@@ -68,10 +71,10 @@
 
       <!-- D I V I D E R -->
 
-      <div class="col-lg-6 col-md-12 w-lg-50">
-        <div class="container-fluid border rounded p-3 w-75 mx-auto my-3">
+      <div class="col-lg-6 col-md-12 w-lg-50 mb-5">
+        <div class="container-fluid border rounded p-3 w-75 mx-auto my-3 h-100" id="decryptDiv">
           <h2>
-            Decryptor
+            Decryptor <i class="fa-solid fa-lock-open"></i>
           </h2>
           <form action="">
             <input type="file" class="form-control" name="" id="" accept="image/png, image/jpeg">
@@ -103,6 +106,8 @@
     </div>
 
   </section>
+
+  <script src="src/index.js"></script>
 
 </body>
 

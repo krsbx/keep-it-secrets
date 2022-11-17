@@ -48,13 +48,13 @@
                 type="file"
                 class="form-control"
                 name=""
-                id=""
+                id="imageInputEncrypt"
                 accept="image/png, image/jpeg"
               />
               <br />
               <textarea
                 name=""
-                id=""
+                id="messageInput"
                 class="form-control"
                 placeholder="plaintext"
               ></textarea>
@@ -64,6 +64,8 @@
                 class="btn btn-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#encrypt"
+                id="encryptMe"
+                disabled
               >
                 Encrypt
               </button>
@@ -73,8 +75,6 @@
         <div
           class="modal fade"
           id="encrypt"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
           tabindex="-1"
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
@@ -96,6 +96,7 @@
                 <img
                   src="https://cdn-images.win.gg/resize/w/1000/format/webp/type/progressive/fit/cover/path/wp/uploads/2022/08/Big-Chungus.webp"
                   class="img-fluid"
+                  id="encryptedImage"
                   alt=""
                 />
               </div>
@@ -116,7 +117,7 @@
                 type="file"
                 class="form-control"
                 name=""
-                id=""
+                id="imageInputDecrypt"
                 accept="image/png, image/jpeg"
               />
               <br />
@@ -125,6 +126,8 @@
                 class="btn btn-warning"
                 data-bs-toggle="modal"
                 data-bs-target="#decrypt"
+                id="decryptMe"
+                disabled
               >
                 Decrypt
               </button>
@@ -134,8 +137,6 @@
         <div
           class="modal fade"
           id="decrypt"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
           tabindex="-1"
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
@@ -154,7 +155,7 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <p>Aku Cinta Stegano 💓</p>
+                <p id="decryptedMessage">Aku Cinta Stegano 💓</p>
               </div>
             </div>
           </div>

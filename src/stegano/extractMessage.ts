@@ -1,3 +1,4 @@
+import { decode } from 'ts-steganography';
 import { decrypt } from '../utils/crypto';
 
 export const extractMessage =
@@ -5,12 +6,12 @@ export const extractMessage =
   (event: Event) => {
     const fileReader = new FileReader();
 
-    fileReader.onload = (event) => {
+    fileReader.onload = async (event) => {
       submitButton.disabled = !event.target?.result;
 
       if (!event.target || !event.target.result) return;
 
-      const decrypted = decrypt(steg.decode(event.target.result as string));
+      const decrypted = decrypt(await decode(event.target.result as string));
 
       messageField.textContent = decrypted;
 

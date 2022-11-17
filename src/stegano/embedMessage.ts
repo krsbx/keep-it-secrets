@@ -1,3 +1,4 @@
+import { encode } from 'ts-steganography';
 import { encrypt } from '../utils/crypto';
 
 let imageUri = '';
@@ -21,7 +22,7 @@ export const saveUri =
     fileReader.readAsDataURL((event.target as HTMLInputElement).files![0]!);
   };
 
-export const embedMessage = (
+export const embedMessage = async (
   textInput: HTMLTextAreaElement,
   imageDist: HTMLImageElement
 ) => {
@@ -30,5 +31,5 @@ export const embedMessage = (
   if (!message.length) message = 'Aku Cinta Stegano';
   message = encrypt(message);
 
-  imageDist.src = steg.encode(message, imageUri);
+  imageDist.src = await encode(message, imageUri);
 };

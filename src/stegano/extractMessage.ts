@@ -1,5 +1,5 @@
 import { decode } from 'ts-steganography';
-import { decrypt } from '../utils/crypto';
+import { decrypt } from '../crypto';
 
 export const extractMessage =
   (submitButton: HTMLButtonElement, messageField: HTMLParagraphElement) =>

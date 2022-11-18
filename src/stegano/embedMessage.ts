@@ -1,9 +1,9 @@
 import { encode } from 'ts-steganography';
-import { encrypt } from '../utils/crypto';
+import { encrypt } from '../crypto';
 
 let imageUri = '';
 
-export const saveUri =
+export const onImageChange =
   (submitButton: HTMLButtonElement, imageDist: HTMLImageElement) =>
   (event: Event) => {
     const fileReader = new FileReader();

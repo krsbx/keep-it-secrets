@@ -1,10 +1,7 @@
-import {
-  embedMessage as _embedMessage,
-  saveUri as _saveUri,
-} from './embedMessage';
-import { extractMessage as _extractMessage } from './extractMessage';
+import { embedMessage, onImageChange } from './embedMessage';
+import { extractMessage } from './extractMessage';
 
-export const embedMessage = (
+export const embedMessageHandler = (
   submitButton: HTMLButtonElement,
   textInput: HTMLTextAreaElement,
   imageDist: HTMLImageElement,
@@ -12,24 +9,24 @@ export const embedMessage = (
 ) => {
   imageInput.addEventListener(
     'change',
-    _saveUri(submitButton, imageDist),
+    onImageChange(submitButton, imageDist),
     false
   );
 
   submitButton.addEventListener(
     'click',
-    () => _embedMessage(textInput, imageDist),
+    () => embedMessage(textInput, imageDist),
     false
   );
 };
 
-export const extractMessage = (
+export const extractMessageHandler = (
   submitButton: HTMLButtonElement,
   messageField: HTMLParagraphElement,
   imageInput: HTMLInputElement
 ) => {
   imageInput.addEventListener(
     'change',
-    _extractMessage(submitButton, messageField)
+    extractMessage(submitButton, messageField)
   );
 };
